@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Area and Circumference of a Circle</h1>
+    <p>The radius of the circle is fixed at <strong>10.25 cm</strong>. Click the buttons below to calculate the area or circumference.</p>
+
+    <!-- Buttons for calculations -->
+    <button type="button" onClick="calculateArea()">Calculate Area</button>
+    <button type="button" onClick="calculateCircumference()">Calculate Circumference</button>
+
+    <br>
+
+    <img src="https://www.mathplanet.com/Oldsite/media/55567/circle01.png">
+
+    <!-- Display results -->
+    <div id="result">
+        Result will appear here.
+    </div>
+
+    <script type="text/javascript">
+        const radius = 10.25;
+
+        function calculateArea() {
+            const area = Math.PI * Math.pow(radius, 2);
+            document.getElementById('result').innerHTML = 
+                `The area of the circle is <strong>${area.toFixed(2)}</strong> square centimeters.`;
+        }
+
+        function calculateCircumference() {
+            const circumference = 2 * Math.PI * radius;
+            document.getElementById('result').innerHTML = 
+                `The circumference of the circle is <strong>${circumference.toFixed(2)}</strong> centimeters.`;
+        }
+
+        function clearResult() {
+            document.getElementById('result').innerHTML = "Result will appear here.";
+        }
+    </script>
+
+      <button type="button" onClick="clearResult()">Clear</button>
+
+  </div>
+
+</body>
+</html>
